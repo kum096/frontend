@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrackNest Logistics</title>
+  <link rel="icon" href="images/site,icon.ico" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      color: #333;
+       padding-top: 80px;
+    }
+
+    .navbar {
+      background-color: #fff;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #004aad, #001f4d);
+      color: white;
+      padding: 120px 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .search-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.05);
+      margin-top: -60px;
+      z-index: 10;
+      position: relative;
+    }
+
+    .btn-primary {
+      background-color: #004aad;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #00347d;
+    }
+
+    footer {
+      background-color: #001f4d;
+      color: #ccc;
+      padding: 40px 0;
+    }
+
+
+    .grayscale {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+.grayscale:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+#languageMenu {
+  max-height: 300px; /* You can adjust this height */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/site,icon.ico" alt="TrackNest Logo" class="me-2">
+      <strong class="text-dark">TrackNest</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-4">
+        <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <!-- Language dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown">
+            Language
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="langDropdown" id="languageMenu">
+  <!-- Languages will be inserted here by JS -->
+</ul>
+
+        </li>
+      </ul>
+      <a href="#" class="btn btn-primary px-4">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero text-center">
+  <div class="container">
+    <h1 class="mb-3">Modern Logistics Tracking & Management</h1>
+    <p class="lead mb-4">Smart tools for shipping, warehousing, and tracking in real-time.</p>
+    <a href="track.html" class="btn btn-light btn-lg fw-bold">Start Tracking Now</a>
+  </div>
+</section>
+
+<!-- Search Card -->
+<div class="container">
+  <div class="search-card shadow-lg mt-n5 p-4 rounded-3">
+    <form class="row g-3">
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Enter City or Location">
+      </div>
+      <div class="col-md-4">
+        <select class="form-select">
+          <option selected>Service Category</option>
+          <option>Local Delivery</option>
+          <option>Warehousing</option>
+          <option>Freight</option>
+        </select>
+      </div>
+      <div class="col-md-4 d-grid">
+        <button class="btn btn-primary btn-block">Search Now</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Trusted By Section -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h5 class="text-uppercase text-muted mb-4">Trusted by Leading Businesses</h5>
+    <div class="row justify-content-center align-items-center g-4">
+      <div class="col-6 col-md-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="img-fluid grayscale" alt="Amazon">
+      </div>
+      <div class="col-6 col-md-2">
+        <img src="images/download1.png" class="img-fluid grayscale" alt="FedEx">
+      </div>
+      <div class="col-6 col-md-2">
+        <img src="images/dhl-logo.svg" class="img-fluid grayscale" alt="DHL">
+      </div>
+      <div class="col-6 col-md-2">
+        <img src="images/logo.svg" class="img-fluid grayscale" alt="UPS">
+      </div>
+      <div class="col-6 col-md-2">
+        <img src="images/download.png" class="img-fluid grayscale" alt="Shopify">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Features Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Why TrackNest Stands Out</h2>
+      <p class="text-muted">We provide unmatched speed, visibility, and delivery intelligence for modern logistics.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <i class="bi bi-geo-alt-fill fs-1 text-primary mb-3"></i>
+            <h5 class="card-title">Real-Time Tracking</h5>
+            <p class="card-text text-muted">Track your packages live across the globe with up-to-the-minute updates and accuracy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <i class="bi bi-globe2 fs-1 text-success mb-3"></i>
+            <h5 class="card-title">Global Coverage</h5>
+            <p class="card-text text-muted">TrackNest supports over 1,000 carriers worldwide, giving your business global reach.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <i class="bi bi-bell-fill fs-1 text-warning mb-3"></i>
+            <h5 class="card-title">Smart Notifications</h5>
+            <p class="card-text text-muted">Get instant alerts for delivery status, delays, or changes — keeping you informed always.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">How It Works</h2>
+      <p class="text-muted">TrackNest makes package tracking easy and efficient in just 3 steps.</p>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="mb-3">
+            <span class="badge rounded-pill bg-primary fs-5">1</span>
+          </div>
+          <h5 class="fw-bold">Find Your Carrier</h5>
+          <p class="text-muted">Enter your tracking number — our system identifies your carrier instantly.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="mb-3">
+            <span class="badge rounded-pill bg-success fs-5">2</span>
+          </div>
+          <h5 class="fw-bold">Track In Real Time</h5>
+          <p class="text-muted">Get live updates and accurate status on your shipment at every step.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="mb-3">
+            <span class="badge rounded-pill bg-warning fs-5">3</span>
+          </div>
+          <h5 class="fw-bold">Get It Delivered</h5>
+          <p class="text-muted">Receive your package with full visibility and automated delivery alerts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What Our Customers Say</h2>
+      <p class="text-muted">Real feedback from people who rely on TrackNest every day.</p>
+    </div>
+    <div class="row">
+      <!-- Testimonial 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <p class="text-muted">"TrackNest is a game-changer. We’ve cut customer service calls by 60% thanks to its real-time updates."</p>
+            <h6 class="fw-bold mb-0">Jane O., E-commerce Manager</h6>
+            <small class="text-muted">GlowTech Retail</small>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <p class="text-muted">"Super clean interface and lightning-fast tracking. Exactly what our business needed."</p>
+            <h6 class="fw-bold mb-0">Daniel M., Operations Lead</h6>
+            <small class="text-muted">FastFerry Express</small>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <p class="text-muted">"Our customers love the TrackNest experience. We’ve seen a noticeable boost in satisfaction ratings."</p>
+            <h6 class="fw-bold mb-0">Amaka B., Logistics Director</h6>
+            <small class="text-muted">SwiftNest Delivery</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-light pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+
+      <!-- Logo -->
+      <div class="col-md-2 mb-4">
+        <img src="images/siteicon.jpg" alt="TrackNest Logistics" class="img-fluid mb-2" />
+        <a href="#"  class="text-light text-decoration-none" ><p>TrackNest Logistics</p></a>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
+          <li><a href="solutions.html" class="text-light text-decoration-none">Services</a></li>
+          <li><a href="track.html" class="text-light text-decoration-none">Track your Shipment</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">Contact Us</h5>
+        <p class="mb-1">Email: nesthaul@gmail.com</p>
+        <p class="mb-1">Phone: +1 732 705 7467</p>
+        <p>Address: 1234 Freight St, NY</p>
+      </div>
+
+      <!-- Stay Updated -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">Stay Updated</h5>
+        <form class="d-flex mb-2">
+          <input type="email" class="form-control me-2" placeholder="Your email" />
+          <button class="btn btn-primary">Subscribe</button>
+        </form>
+        <div>
+          <a href="#" class="text-light me-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+    <hr class="bg-light" />
+    <div class="text-center">
+      <p class="mb-0">&copy; 2018 TrackNest Logistics. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/lang.js"></script>
+</body>
+</html>
