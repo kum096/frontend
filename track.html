@@ -235,7 +235,7 @@
   crossorigin=""
 ></script>
 
-<<script>
+<script>
   let map, marker;
 
   document.querySelector('form').addEventListener('submit', async function(event) {
@@ -249,7 +249,7 @@
     document.getElementById('map').style.display = 'none';
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/v1/shipments/tracking/${trackingNumber}`);
+      const response = await fetch(`https://backend-umdv.onrender.com/api/v1/shipments/tracking/${trackingNumber}`);
       if (!response.ok) {
         throw new Error('Shipment not found');
       }
@@ -370,6 +370,7 @@
       .catch(() => alert('Failed to copy!'));
   });
 </script>
+
 
 
 </body>
