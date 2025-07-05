@@ -279,25 +279,30 @@
 
       // Handle Leaflet map if current_location_coords available
       // Expecting shipment.current_location_coords = "lat,lng" string or array [lat, lng]
-      let coords = shipment.current_location_coords || shipment.current_location || shipment.location_coords;
+     let coords = null;
 
-      if (coords) {
-        // Normalize coords format if it's a string like "lat,lng"
-        if (typeof coords === 'string') {
-          const parts = coords.split(',').map(Number);
-          if (parts.length === 2 && !parts.some(isNaN)) {
-            coords = parts;
-          } else {
-            coords = null;
-          }
-        } else if (Array.isArray(coords)) {
-          if (coords.length !== 2 || coords.some(c => typeof c !== 'number')) {
-            coords = null;
-          }
-        } else {
-          coords = null;
-        }
-      }
+// Try to extract coords from current_location_coords if it's an object with latitude and longitude
+if (shipment.current_location_coords && typeof shipment.current_location_coords === 'object') {
+  const lat = shipment.current_location_coords.latitude;
+  const lng = shipment.current_location_coords.longitude;
+  if (typeof lat === 'number' && typeof lng === 'number') {
+    coords = [lat, lng];
+  }
+} else if (shipment.current_location && typeof shipment.current_location === 'string') {
+  // fallback if current_location is a string "lat,lng"
+  const parts = shipment.current_location.split(',').map(Number);
+  if (parts.length === 2 && !parts.some(isNaN)) {
+    coords = parts;
+  }
+} else if (shipment.location_coords && Array.isArray(shipment.location_coords)) {
+  // fallback if location_coords is array [lat, lng]
+  if (shipment.location_coords.length === 2 &&
+      typeof shipment.location_coords[0] === 'number' &&
+      typeof shipment.location_coords[1] === 'number') {
+    coords = shipment.location_coords;
+  }
+}
+
 
       if (coords) {
         // Show map container
