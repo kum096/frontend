@@ -132,44 +132,64 @@
 </nav>
 
 <!-- Tracking Section -->
-<section class="track-section">
+<section class="track-section" aria-labelledby="track-heading">
   <div class="container">
-    <div class="track-box">
-      <h2 class="mb-3 text-center">Track Your Shipment</h2>
-      <p class="text-muted text-center mb-4">Enter your tracking number to view real-time delivery updates.</p>
+    <div class="track-box" role="region" aria-labelledby="track-heading">
+      <h2 id="track-heading" class="mb-3 text-center">Track Your Shipment</h2>
+      <p class="text-muted text-center mb-4" id="track-description">
+        Enter your tracking number to view real-time delivery updates.
+      </p>
 
-      <form id="trackForm">
+      <form id="trackForm" aria-describedby="track-description">
         <div class="mb-3">
+          <label for="trackingNumberInput" class="form-label visually-hidden">Tracking Number</label>
           <input
             type="text"
             id="trackingNumberInput"
             name="tracking_number"
             class="form-control form-control-lg"
             placeholder="Tracking Number (e.g. TN1234567890)"
+            aria-required="true"
             required
           />
         </div>
-        <button type="submit" class="btn btn-primary btn-lg w-100">Track Package</button>
+        <button type="submit" class="btn btn-primary btn-lg w-100" aria-label="Track Package">
+          Track Package
+        </button>
       </form>
 
-      <div id="shipmentDetails" class="mt-5" style="display:none;">
+      <div
+        id="shipmentDetails"
+        class="mt-5"
+        style="display:none;"
+        aria-live="polite"
+        aria-label="Shipment Details"
+        role="region"
+      >
         <h4>Shipment Details</h4>
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped" aria-describedby="track-heading">
           <tbody id="shipmentTableBody">
             <!-- Data rows will be inserted here -->
           </tbody>
         </table>
-        <button id="copyBtn" class="btn btn-secondary me-2">Copy Details</button>
-        <button id="downloadBtn" class="btn btn-success">Download as XLS</button>
+        <button id="copyBtn" class="btn btn-secondary me-2" aria-label="Copy Shipment Details">Copy Details</button>
+        <button id="downloadBtn" class="btn btn-success" aria-label="Download Shipment Details">Download as XLS</button>
 
         <!-- OpenLayers Map Container -->
-        <div id="map"></div>
+        <div id="map" aria-label="Shipment location map"></div>
       </div>
 
-      <div id="errorMessage" class="alert alert-danger mt-3" style="display:none;"></div>
+      <div
+        id="errorMessage"
+        class="alert alert-danger mt-3"
+        style="display:none;"
+        role="alert"
+        aria-live="assertive"
+      ></div>
     </div>
   </div>
 </section>
+
 
 <!--Footer section -->
 <footer class="bg-dark text-light pt-5 pb-4">
